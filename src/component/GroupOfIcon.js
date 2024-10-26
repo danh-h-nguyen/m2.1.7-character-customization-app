@@ -1,15 +1,18 @@
 import React from "react";
 import Icon from "./Icon.js";
 
-function GroupOfIcon({ folder }) {
+function GroupOfIcon({ folder, quantity, handleClick }) {
   return (
     <div className="list">
-      <Icon folder={folder} name="1" />
-      <Icon folder={folder} name="2" />
-      <Icon folder={folder} name="3" />
-      <Icon folder={folder} name="4" />
-      <Icon folder={folder} name="5" />
-      <Icon folder={folder} name="6" />
+      {/* (_, index): Array.from nhận một callback dùng để tạo các giá trị index từ 0 đến quantity - 1 */}
+      {Array.from({ length: quantity }, (_, index) => (
+        <Icon
+          key={index}
+          folder={folder}
+          quantity={index + 1}
+          onClick={() => handleClick(folder, index + 1)}
+        />
+      ))}
     </div>
   );
 }

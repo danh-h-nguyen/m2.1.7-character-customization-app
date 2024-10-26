@@ -1,10 +1,10 @@
 import React from "react";
 
-function Icon({ folder, name }) {
+function Icon({ folder, quantity, onClick }) {
   return (
-    <div className="clickable square">
+    <div className="clickable square" onClick={onClick}>
       <img
-        src={`/character/${folder}/${name}.png`}
+        src={`/character/${folder}/${quantity}.png`}
         alt=""
         height="60"
         class="img-center"
