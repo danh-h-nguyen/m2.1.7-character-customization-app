@@ -104,6 +104,7 @@ function App() {
                     folder={folder}
                     quantity={quantity}
                     handleClick={handleClick}
+                    shows={shows}
                   />
                 </div>
               ))}
